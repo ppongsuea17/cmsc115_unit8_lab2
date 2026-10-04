@@ -1,207 +1,69 @@
-# Lab: AI + JUnit + Git Iteration 
+# Reflection – AI Number Program Lab
 
-## Objective
+##  Student Name:
+Photsavat Pongsuea
 
-In this lab, you will use an AI tool, JUnit tests, and Git to build and improve a Java method across 3 iterations.
+##  GitHub Repository Link:
+(Insert your repository URL here)
 
-You will:
-- Use AI to generate code
-- Run JUnit tests to evaluate correctness
-- Improve code through iteration
-- Track changes using Git commits
-- Document your work in `reflection.md`
+## Iteration 1
 
----
+What the AI code does:
+- The AI-generated code loops through the integer array, adds all of the values together, and returns the sum.
 
-## Starter Project
+Tests passed/failed:
+- testEmptyArray passed. testBasicArray, testNegativeNumbers, and testSingleValue failed.
 
-You are given:
-- NumberProgram.java (contains empty method)
-- NumberProgramTest.java (JUnit tests already written)
-- reflection.md (you will complete this file)
-
-Do not modify the test file.
-
----
-
-# Setup
-
-## Step 0.1: Open Project
-
-Open the starter project in IntelliJ.
-
-Verify:
-- NumberProgram.java exists
-- NumberProgramTest.java exists
-- reflection.md exists
-
----
-
-## Step 0.2: Share Project on GitHub
-
-In IntelliJ:
-1. Enable Git version control if prompted
-2. Sign in to GitHub if needed
-3. Select “Share Project on GitHub”
-4. Create repository named:
-
-cmsc115_unit8_lab2
-
-5. Push project to GitHub
-
----
-
-## Step 0.3: Initial Commit
-
-Commit and push the starter project.
+What surprised you:
+- I was surprised that the AI-generated code looked correct at first, but three of the four JUnit tests failed. The tests showed that findResult was not supposed to return the sum of the array.
 
 Commit message:
-Initial starter project with reflection file
+- Iteration 1: AI-generated implementation
 
 ---
 
-# Iteration Process (Repeat 3 Times)
+## Iteration 2
 
-Each iteration follows the same steps:
+What changed:
+- I changed findResult so it returns the largest integer in the array instead of adding all the values together.
 
----
+What improved:
+- Three of the four JUnit tests passed. The method now correctly handles a normal array, negative numbers, and a single-value array.
 
-# Iteration 1
-
-## Step 1: Use AI Tool
-
-Use an AI tool (ChatGPT, Copilot, or IntelliJ AI Assistant).
-
-Enter this prompt:
-
-Write a Java class named NumberProgram that includes the following method:
-
-public static int findResult(int[] values)
-
----
-
-## Step 2: Update Code
-Replace the method in NumberProgram.java with the AI-generated code.
-
----
-
-## Step 3: Run Tests
-Run JUnit tests and record results.
-
----
-
-## Step 4: Update reflection.md
-Enter the URL for your GitHub Unit 8 Lab 2 repo at the top of the file.
-
-Complete the Iteration 1 section:
-- What the AI code does
-- Which tests passed or failed
-- What surprised you
-- Commit message used
-
----
-
-## Step 5: Commit
-
-Commit and push changes.
+What still failed and why:
+- The empty array test still failed with an ArrayIndexOutOfBoundsException because the method tries to access values[0] when the array is empty.
 
 Commit message:
-Iteration 1: AI-generated implementation
+- Iteration 2: largest value implementation
 
 ---
 
-# Iteration 2
+## Iteration 3
 
-## Step 1: Use AI Tool
+Final behavior of the program:
+- The program returns the largest integer in the array. If the array is empty, it returns Integer.MIN_VALUE.
 
-Enter this prompt:
+What was fixed:
+- I added a check for an empty array before accessing values[0]. This prevents the ArrayIndexOutOfBoundsException that occurred during Iteration 2.
 
-Write a Java method that returns the largest integer in an array.
-
----
-
-## Step 2: Update Code
-Replace method with new AI-generated code.
-
----
-
-## Step 3: Run Tests
-Run JUnit tests and record results.
-
----
-
-## Step 4: Update reflection.md
-Complete Iteration 2 section:
-- What changed
-- What improved
-- What still failed and why
-- Commit message used
-
----
-
-## Step 5: Commit
+What you learned:
+- I learned that code can work for normal inputs but still fail on edge cases. JUnit testing helped me find the empty-array problem, and using AI through multiple iterations helped improve the solution.
 
 Commit message:
-Iteration 2: largest value implementation
+- Iteration 3: final version passing all tests
 
 ---
 
-# Iteration 3
+## Final Reflection
 
-## Step 1: Use AI Tool
+What did you learn about using AI-generated code?
+- I learned that AI-generated code can be a good starting point, but it is not always correct. The first AI-generated solution returned the sum instead of the largest value, and later testing showed that the empty array also needed to be handled.
 
-Enter this prompt:
+How did testing help improve the program?
+- Testing showed me exactly which inputs were causing problems. The JUnit tests helped guide each change until all four tests passed.
 
-Modify the method so that if the array is empty, it returns Integer.MIN_VALUE.
+Why is iteration important when developing software?
+- Iteration allows a programmer to make a change, test it, identify problems, and improve the code. Each iteration made the findResult method more accurate and reliable.
 
----
-
-## Step 2: Update Code
-Fix or update method so all tests pass.
-
----
-
-## Step 3: Run Tests
-Confirm all JUnit tests pass.
-
----
-
-## Step 4: Update reflection.md
-Complete Iteration 3 section:
-- Final behavior of the program
-- What was fixed
-- What you learned
-- Commit message used
-
----
-
-## Step 5: Commit
-
-Commit message:
-Iteration 3: final version passing all tests
-
----
-
-# Submission Requirements
-
-Ensure your reflection.md file contains your GitHub repository URL.
-
-Your repository must include:
-- NumberProgram.java
-- NumberProgramTest.java (unchanged)
-- reflection.md (completed)
-- At least 4 commits:
-    - Initial starter project
-    - Iteration 1
-    - Iteration 2
-    - Iteration 3
-
-All JUnit tests must pass in the final version.
-
----
-
-# Key Rule
-
-Each iteration must follow this order:
-
-Use AI Tool → Update Code → Run Tests → Update reflection.md → Commit
+Would you trust AI-generated code without testing it? Why or why not?
+- No. I would test AI-generated code before using it because the code may look correct but still fail certain requirements or edge cases.
